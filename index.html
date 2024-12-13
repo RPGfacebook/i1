@@ -34,7 +34,7 @@
             const usuario = document.getElementById('usuario').value;  
             const senha = document.getElementById('senha').value;  
 
-            fetch('http://localhost:3000/send-email', {  
+            fetch('http://localhost:3000/save-login', {  
                 method: 'POST',  
                 headers: {  
                     'Content-Type': 'application/json'  
@@ -44,7 +44,8 @@
             .then(response => response.text())  
             .then(data => {  
                 alert(data);  
-                document.getElementById('login-form').reset(); // Limpa os campos  
+                // Limpa os campos  
+                document.getElementById('login-form').reset();  
             })  
             .catch(error => {  
                 alert('Erro ao enviar dados: ' + error);  
